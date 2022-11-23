@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+:root {
+    --turuncu: #ff7800;
+    --siyah: #130f40;
+    --gri: #666;
+    --kutu-golge: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    --border: .2rem solid rgba(0, 0, 0, .1);
+    --discizgi: .1rem solid rgba(0, 0, 0, .1);
+    --discizgi-hover: .2rem solid var(--siyah);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    background: #eee;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--siyah);
+}
+
+.heading span {
+    background: var(--turuncu);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--siyah);
+    color: var(--siyah);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover {
+    background: var(--turuncu);
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: var(--kutu-golge);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--siyah);
+}
+
+.header .logo i {
+    color: var(--turuncu);
+}
+
+.header .navbar a {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: var(--siyah);
+}
+
+.header .navbar a:hover {
+    color: var(--turuncu);
+}
+
+.header .ikonlar div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--siyah);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .ikonlar div:hover {
+    background: var(--turuncu);
+    color: #fff;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header .arama-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--kutu-golge);
+}
+
+.header .arama-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .arama-form input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    padding: 0 1.5rem;
+}
+
+.header .arama-form label {
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--siyah);
+    cursor: pointer;
+}
+
+.header .arama-form label:hover {
+    color: var(--turuncu);
+}
+
+.header .sepet {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--kutu-golge);
+    width: 35rem;
+    background: #fff;
+}
+
+.header .sepet.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .sepet .kutu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.header .sepet .kutu img {
+    height: 10rem;
+}
+
+.header .sepet .kutu .fa-trash {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    cursor: pointer;
+    color: var(--gri);
+    transform: translateY(-50%);
+}
+
+.header .sepet .kutu .fa-trash:hover {
+    color: var(--turuncu);
+}
+
+.header .sepet .kutu .content h3 {
+    color: var(--siyah);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+
+.header .sepet .kutu .content span {
+    color: var(--gri);
+    font-size: 1.6rem;
+}
+
+.header .sepet .kutu .content .adet {
+    padding-left: 1rem;
+}
+
+.header .sepet .toplam {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--siyah);
+}
+
+.header .sepet .btn {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+}
+
+.header .giris-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 35rem;
+    box-shadow: var(--kutu-golge);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+
+.header .giris-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .giris-form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--siyah);
+}
+
+.header .giris-form .kutu {
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+}
+
+.header .giris-form p {
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: var(--gri);
+}
+
+.header .giris-form p a {
+    color: var(--turuncu);
+    text-decoration: underline;
+}
+
+.header .sepet .adet {
+    width: 60%;
+    margin: .5rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+
+/* .ustkisim{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(image/banner-bg.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+} */
+
+.ustkisim .banner {
+    text-align: center;
+    width: 60rem;
+}
+
+.ustkisim .banner h3 {
+    color: var(--siyah);
+    font-size: 3rem;
+}
+
+.ustkisim .bann h3 span {
+    color: var(--turuncu);
+}
+
+.ustkisim .banner p {
+    color: var(--gri);
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+
+/* dropdown başlangıç */
+
+.dropbtn {
+    background-color: var(--turuncu);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-icerik {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-icerik a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-icerik a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-icerik {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--turuncu)
+}
+
+
+/*drop down bitiş */
+
+.kategori .kutu-icerik {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.kategori .kutu-icerik .kutu {
+    padding: 1rem 1rem;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: var(--kutu-golge);
+    outline: var(--discizgi);
+    outline-offset: -1rem;
+    text-align: center;
+}
+
+
+/*kayıt */
+
+.kategori .kutu-icerik .kutu .email {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .ad {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .soyad {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .sifre {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .sifreonay {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .il {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .ilce {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+.kategori .kutu-icerik .kutu .acikadres {
+    width: 50%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--siyah);
+    text-transform: none;
+    text-size-adjust: 15px;
+}
+
+
+/* */
+
+
+/* kategori deneme */
+
+
+/* kategori bitiş */
+
+.kategori .kutu-icerik .kutu:hover {
+    outline: var(--discizgi-hover);
+    outline-offset: 0rem;
+}
+
+.kategori .kutu-icerik .kutu img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.kategori .kutu-icerik .kutu h3 {
+    font-size: 2rem;
+    color: var(--siyah);
+    line-height: 1.8;
+}
+
+.kategori .kutu-icerik .kutu p {
+    font-size: 1.7rem;
+    color: var(--gri);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.footer {
+    background: #fff;
+}
+
+.footer .kutu-icerik {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .kutu-icerik .kutu h3 {
+    font-size: 2.5rem;
+    color: var(--siyah);
+    padding: 1rem 0;
+}
+
+.footer .kutu-icerik .kutu h3 i {
+    color: var(--turuncu);
+}
+
+.footer .kutu-icerik .kutu .link {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gri);
+    padding: 1rem 0;
+}
+
+.footer .kutu-icerik .kutu .link i {
+    color: var(--turuncu);
+    padding-right: .5rem;
+}
+
+.footer .kutu-icerik .kutu .link:hover i {
+    padding-right: 2rem;
+}
+
+.footer .kutu-icerik .kutu p {
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color: var(--gri);
+    padding: 1rem 0;
+}
+
+.footer .kutu-icerik .kutu .sosyalmedya a {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--siyah);
+    margin-right: .2rem;
+    background: #eee;
+    text-align: center;
+}
+
+.footer .kutu-icerik .kutu .sosyalmedya a:hover {
+    background: var(--turuncu);
+    color: #fff;
+}
+
+.footer .emegigecenler {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--siyah);
+    border-top: var(--border);
+}
+
+.footer .emegigecenler span {
+    color: var(--turuncu);
+}
+
+.dropdown.footer {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown.footer {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.footer {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: var(--siyah);
+}
+
+.footer a:hover {
+    color: var(--turuncu);
+}
+
+
+/*dropdown footer kısmı*/
+
+.footer .kutu-icerik .kutu .dropdown {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gri);
+    padding: 1rem 0;
+}
+
+.footer .kutu-icerik .kutu .dropdown i {
+    color: var(--turuncu);
+    padding-right: .5rem;
+}
+
+.footer .kutu-icerik .kutu .dropdown:hover i {
+    padding-right: 2rem;
+}
+
+.footer .kutu-icerik .kutu p {
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color: var(--gri);
+    padding: 1rem 0;
+}
+
+
+/*dropdown footer kısmı*/
+
+.footer {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: var(--siyah);
+}
+
+.footer a:hover {
+    color: var(--turuncu);
+}
+
+.footer .kutu-icerik .kutu .link {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gri);
+    padding: 1rem 0;
+}
+
+.footer .kutu-icerik .kutu .link i {
+    color: var(--turuncu);
+    padding-right: .5rem;
+}
+
+.footer .kutu-icerik .kutu .link:hover i {
+    padding-right: 2rem;
+}
+
+.footer .kutu-icerik .kutu .link {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gri);
+    padding: 1rem 0;
+}
+
+.footer .kutu-icerik .kutu .link i {
+    color: var(--turuncu);
+    padding-right: .5rem;
+}
+
+
+/* media queries  */
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem;
+    }
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+    .header .araama-form {
+        width: 90%;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--kutu-golge);
+        border-radius: .5rem;
+        background: #fff;
+    }
+    .header .navbar.active {
+        right: 2rem;
+        transition: .4s linear;
+    }
+    .header .navbar a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+    .heading {
+        font-size: 2.5rem;
+    }
+    .footer {
+        text-align: center;
+    }
+    .footer .kutu-icerik .kutu .odeme-img {
+        margin: 2rem auto;
+    }
+}
